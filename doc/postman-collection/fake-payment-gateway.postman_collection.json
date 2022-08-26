@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "c7b1e81f-09ab-4f75-9ccd-ee997306e245",
+		"name": "fake-payment-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19397039"
+	},
+	"item": [
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "Email MFA for Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerEmail\": \"laxminarayana33317@gmail.com\",\r\n    \"customerName\": \"LaxmiNarayana\",\r\n    \"amount\": \"8000.00\",\r\n    \"cardType\": \"VISA\",\r\n    \"cardNumber\": \"4242424242424242\",\r\n    \"expiryMonth\": \"01\",\r\n    \"expiryYear\": \"2020\",\r\n    \"cvv\": \"123\",\r\n    \"service\": {\r\n        \"names\": [\r\n            \"flights\",\r\n            \"package\",\r\n            \"extraStuff\"\r\n        ],\r\n        \"prices\": [\r\n            \"5000\",\r\n            \"2000\",\r\n            \"1000\"\r\n        ]\r\n    },\r\n    \"paymentType\" : \"card\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5100/api/v1/payment/card",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Confirmation Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderID\": \"1661499995745\",\r\n    \"OTP\": \"372150\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5100/api/v1/payment/Verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"Verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5100/api/v1/payment/card",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"card"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "phone",
+			"item": [
+				{
+					"name": "Email MFA for Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerEmail\": \"laxminarayana33317@gmail.com\",\r\n    \"customerName\": \"LaxmiNarayana\",\r\n    \"service\": {\r\n        \"names\": [\r\n            \"flights\",\r\n            \"package\",\r\n            \"extraStuff\"\r\n        ],\r\n        \"prices\": [\r\n            \"5000\",\r\n            \"2000\",\r\n            \"1000\"\r\n        ]\r\n    },\r\n    \"amount\": \"8000.00\",\r\n    \"upiID\": \"9505718154@ybl\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5100/api/v1/payment/phone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Confirmation Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderID\": \"1661497678874\",\r\n    \"OTP\": \"874980\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5100/api/v1/payment/Verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"Verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://54.166.252.176:5100/api/v1/payment/phone",
+							"protocol": "http",
+							"host": [
+								"54",
+								"166",
+								"252",
+								"176"
+							],
+							"port": "5100",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"phone"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5100/api/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5100",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AWS SNS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/?message=OTP FROM AWS SNS -  54312 &number=919505718154&subject=AWSSNS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "OTP FROM AWS SNS -  54312 "
+						},
+						{
+							"key": "number",
+							"value": "919505718154"
+						},
+						{
+							"key": "subject",
+							"value": "AWSSNS"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

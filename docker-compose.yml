@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  bookings:
+    image: laxminarayanak/fake-payment-gateway:latest
+    ports:
+      - "5100:5100"
+    environment:
+      MAIL_SENDER_IDENTITY : pstravelaggregator@gmail.com
+      MAIL_SENDER_PASSWORD : fkyundddfsyzzqja
+      
