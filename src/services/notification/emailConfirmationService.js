@@ -3,7 +3,7 @@ const path = require('path');
 const mailService = require('../system/mailer/nodeMailer.service');
 
 const ConfirmationService = {
-    sendReceiptEmail : async ( senderEmail, customerName, service, total) =>
+    sendReceiptEmail : async ( senderEmail, customerName, service, total, orderID) =>
     {
         try
         {
@@ -21,7 +21,7 @@ const ConfirmationService = {
                 var priceRow ="";
                 for(let i=0;i<names.length;i++){
                     priceRow += `<tr>
-                    <td>${names[i]}</td>
+                    <td><a style="font-weight: 700; text-decoration: none; color: #000;">${names[i]}</a></td>
                     <td class="alignright">
                       Rs.${prices[i]}
                     </td>
@@ -31,7 +31,8 @@ const ConfirmationService = {
                     .replace("{invoiceNumber}", Math.floor(Math.random() * Math.floor(Math.random() * Date.now())))
                     .replace("{date}", new Date().toLocaleString())
                     .replace("{service}", priceRow)
-                    .replace("{total}", total);
+                    .replace("{total}", total)
+                    .replace("{orderID}",orderID)
 
                 mailService.send(senderEmail, `PSTravel E-Receipt`, htmlBody).then();
             });

@@ -77,7 +77,7 @@
 
       .content-wrap {
         padding: 20px;
-        background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.3)), url("https://github.com/LaxmiNarayanaK/fake-payment-gateway/blob/master/public/EmailGraphics.png?raw=true");
+        background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("https://github.com/LaxmiNarayanaK/fake-payment-gateway/blob/master/public/EmailGraphics.png?raw=true");
         background-repeat: no-repeat;
         background-size: 400px 350px;
         background-position: right top;
@@ -323,7 +323,7 @@
                           <tbody>
                             <tr>
                               <td class="content-image">
-                                <img src="https://github.com/LaxmiNarayanaK/fake-payment-gateway/blob/master/public/pay-logo.png?raw=true" />
+                                <img src="https://github.com/LaxmiNarayanaK/fake-payment-gateway/blob/master/public/logo.png?raw=true" />
                               </td>
                             </tr>
                             <tr>
@@ -337,8 +337,10 @@
                                   <tbody>
                                     <tr>
                                       <td>
-                                        {customerName}<br />Invoice:
-                                        {invoiceNumber}<br />	Date & Time of Booking : {date}
+                                        <a style="font-weight: 700; text-decoration: none; color: #000;">{customerName}</a><br/>
+                                        <a><a style="font-weight: 700; text-decoration: none; color: #000;">Invoice :</a> {invoiceNumber}</a><br/>
+                                        <a style="font-weight: 700; text-decoration: none; color: #000;">Date & Time of Booking :</a> {date}</a><br/>
+                                        <a style="font-weight: 700; text-decoration: none; color: #000;">Order ID :</a> {orderID}</a>
                                       </td>
                                     </tr>
                                     <tr>
@@ -372,7 +374,7 @@
                             </tr>
                             <tr>
                               <td class="content-block" style="font-family: Bree Serif;">
-                                <a href="https://dj25m0sw7dy82.cloudfront.net/"
+                                <a href="http://dev-ps-travel-aggregator.s3-website-us-east-1.amazonaws.com/"
                                   >Visit PS Travel Aggregrator</a
                                 >
                               </td>
