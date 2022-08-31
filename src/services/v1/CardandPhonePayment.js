@@ -1,18 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
-const PhonePayment = {
+const CardandPhonePayment = {
     payment : async (transactionData) =>
     {
         const transactionDataObj = JSON.stringify(transactionData);
 
-        const data = fs.readFileSync(path.resolve('data/phone-transaction.json'));
+        const data = fs.readFileSync(path.resolve('data/card-phone-transaction.json'));
         const json = JSON.parse(data);
         const transactionalJson = JSON.parse(transactionDataObj);
 
         json.push(transactionalJson);
 
-        fs.writeFileSync(path.resolve('data/phone-transaction.json'), JSON.stringify(json));
+        fs.writeFileSync(path.resolve('data/card-phone-transaction.json'), JSON.stringify(json));
 
         return {
             message : 'transaction is successful',
@@ -20,11 +20,11 @@ const PhonePayment = {
     },
     history : async () =>
     {
-        const data = fs.readFileSync(path.resolve('data/phone-transaction.json'));
+        const data = fs.readFileSync(path.resolve('data/card-phone-transaction.json'));
         const json = JSON.parse(data);
 
         return json;
     },
 };
 
-module.exports = PhonePayment;
+module.exports = CardandPhonePayment;

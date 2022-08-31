@@ -1,7 +1,7 @@
 const fs = require("fs");
    
 // Read users.json file
-fs.readFile("data/card-transaction.json", function(err, data) {
+fs.readFile("data/card-phone-transaction.json", function(err, data) {
       
     // Check for errors
     if (err) throw err;

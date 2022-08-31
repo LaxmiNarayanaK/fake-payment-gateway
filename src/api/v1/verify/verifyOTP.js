@@ -2,8 +2,8 @@ const Router = require("koa-router");
 const StatusCodes = require("http-status-codes");
 const fs = require("fs");
 const { Card, Response } = require('../../../types');
-const fetch = require('node-fetch');
 const { emailConfirmationService } = require('../../../services')
+const path = require('path');
 
 
 const router = new Router({
@@ -11,19 +11,14 @@ const router = new Router({
 });
 router.post("/", async (ctx, next) => {
 
-    if(ctx.request.body.upiID)
-    var data = fs.readFileSync('data\\phone-transaction.json');
-    else
-    var data = fs.readFileSync('data\\card-transaction.json');
 
+    var data = fs.readFileSync(path.resolve('data/card-phone-transaction.json'));
     const obj = JSON.parse(data)
-    console.log(obj)
     const response = new Response();
     users = obj;
     users.forEach((element) => {
         if (element.orderID == ctx.request.body.orderID) {
             if (element.OTP == ctx.request.body.OTP) {
-
                 response.success = true;
                 response.message = `Transaction is successful.`;
                 response.transactionID = new Date().getTime();
@@ -43,18 +38,6 @@ router.post("/", async (ctx, next) => {
             }
         }
     });
-    ctx.response.status = StatusCodes.FORBIDDEN;
-
-        response.success = false;
-        response.message = "Cannot proceed payment.";
-        response.data = {
-            message : "Invalid OTP",
-        };
-
-        ctx.body = response;
-        next().then();
-
-        return;
 });
 
 module.exports = router;

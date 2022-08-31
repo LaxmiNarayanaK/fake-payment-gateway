@@ -1,6 +1,6 @@
 const Router = require('koa-router');
 const StatusCodes = require('http-status-codes');
-const { PhonePayment, emailNotificationService } = require('../../../services');
+const { CardandPhonePayment, emailNotificationService } = require('../../../services');
 const { Phone, Response } = require('../../../types');
 
 // Prefix all routes with: /auth
@@ -12,7 +12,7 @@ router.get('/', async (ctx, next) =>
 {
     const response = new Response();
 
-    const data = await PhonePayment.history();
+    const data = await CardandPhonePayment.history();
 
     response.success = true;
     response.message = `Transaction history.`;
@@ -50,7 +50,7 @@ router.post('/', async (ctx, next) =>
         return;
     }
 
-    const data = await PhonePayment.payment(request);
+    const data = await CardandPhonePayment.payment(request);
 
     if (!data)
     {

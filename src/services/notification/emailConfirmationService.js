@@ -28,7 +28,7 @@ const ConfirmationService = {
                   </tr>`
                 }
                 const htmlBody = data.replace("{customerName}", customerName)
-                    .replace("{invoiceNumber}", Date.now().toString(36))
+                    .replace("{invoiceNumber}", Math.floor(Math.random() * Math.floor(Math.random() * Date.now())))
                     .replace("{date}", new Date().toLocaleString())
                     .replace("{service}", priceRow)
                     .replace("{total}", total);
