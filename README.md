@@ -4,10 +4,10 @@
 
 fake-payment-gateway, that handle
 
-- payment via card details
-- payment via phone number
+- Payment via card details
+- Payment via phone number
 - each payment send email notification for customer
-- can fetch all card/ phone payment history
+- OTP functionality to verify payment
 
 
 ## Tech
@@ -78,37 +78,11 @@ You can get all api end-points invoking the following link,
 1. For card payment 
     - url  : [http://localhost:5100/api/v1/payment/card](http://localhost:5100/api/v1/payment/card)
     - type : POST
-    - sample request body :
-    ```json
-    {
-        "app_name": "ABC",
-        "service": "Electronic Items",
-        "customerEmail":"shalithax@gmail.com",
-        "cardType  ": "VISA",
-        "card_holder_name": "Example",
-        "cardNumber": "4242424242424242",
-        "expiryMonth": "01",
-        "expiryYear": "2020",
-        "cvv": "123",
-        "amount": "5000.00",
-        "currency": "USD"
-    }
-    ```
+
 2. For payment using phone number
     - url  : [http://localhost:5100/api/v1/payment/phone](http://localhost:5100/api/v1/payment/phone)
     - type : POST
-    - sample request body :
-    ```json
-    {
-        "app_name": "ABC",
-        "service": "Electronic Items",
-        "customerEmail":"shalithax@gmail.com",
-        "phoneNumber  ": "0771940055",
-        "phone_holder_name": "shalitha",
-        "amount": "5000.00",
-        "currency": "USD"
-    }
-    ```
+
 3. Get card payment transaction history
     - url  : [http://localhost:5100/api/v1/payment/card](http://localhost:5100/api/v1/payment/card)
     - type : GET

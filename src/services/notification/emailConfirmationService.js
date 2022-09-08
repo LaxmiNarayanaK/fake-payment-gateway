@@ -40,7 +40,6 @@ const ConfirmationService = {
         catch (e)
         {
             console.log(e);
-            throw e;
         }
     },
 };

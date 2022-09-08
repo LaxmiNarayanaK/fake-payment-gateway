@@ -77,7 +77,6 @@
 
       .content-wrap {
         padding: 20px;
-        background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("https://github.com/LaxmiNarayanaK/fake-payment-gateway/blob/master/public/EmailGraphics.png?raw=true");
         background-repeat: no-repeat;
         background-size: 400px 350px;
         background-position: right top;
@@ -239,6 +238,7 @@
         margin: 40px auto;
         text-align: left;
         width: 80%;
+        margin-bottom: 10px;
       }
       .invoice td {
         padding: 5px 0;
@@ -297,6 +297,7 @@
             Styles for Logo
         ------------------------------------- */
       .content-image img {
+        margin-top: -2rem;
         width: 50%;
         float: left;
       }
@@ -322,59 +323,46 @@
                         <table width="100%" cellpadding="0" cellspacing="0">
                           <tbody>
                             <tr>
-                              <td class="content-image">
-                                <img src="https://github.com/LaxmiNarayanaK/fake-payment-gateway/blob/master/public/logo.png?raw=true" />
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="content-block">
-                                <h2 style="color: rgb(122, 119, 202); font-family: Alfa Slab One">Thank you for using PSTravelAggregator</h2>
-                              </td>
-                            </tr>
-                            <tr>
                               <td class="content-block">
                                 <table class="invoice">
                                   <tbody>
                                     <tr>
+                                        <td class="content-image">
+                                          <img src="https://github.com/LaxmiNarayanaK/fake-payment-gateway/blob/master/public/logo.png?raw=true" />
+                                        </td>
+                                      </tr>
+                                      
+                                    <tr>
                                       <td>
-                                        <a style="font-weight: 700; text-decoration: none; color: #000;">{customerName}</a><br/>
-                                        <a><a style="font-weight: 700; text-decoration: none; color: #000;">Invoice :</a> {invoiceNumber}</a><br/>
+                                        <br/>
+                                    <p style="text-align: left; ">Dear <span style="font-weight: bold;">{customerName}</span>,<br/><br/>
+                                        Thanks for using PSTravel ! <br/>We wish to inform you that, with reference to refund against Transaction ID <span style="font-style: italic;">{transactionId}</span> for {service} booking, an amount of Rs. <span style="font-style: italic;">{amount}</span> has been processed as per below details:
+                                     </p>
+                                    </td>
+                                  </tr>
+                                      <tr>
+                                      <td>
                                         <a style="font-weight: 700; text-decoration: none; color: #000;">Date & Time of Booking :</a> {date}</a><br/>
-                                        <a style="font-weight: 700; text-decoration: none; color: #000;">Order ID :</a> {orderID}</a>
+                                        <a style="font-weight: 700; text-decoration: none; color: #000;">Refund amount: </a>Rs. {amount}</a><br/>
+                                        <a style="font-weight: 700; text-decoration: none; color: #000;">Order ID :</a> {transactionId}</a><br/>
+                                        <a style="font-weight: 700; text-decoration: none; color: #000;">Payment Method: </a> {paymentMethod}</a><br/>
+                                        <a style="font-weight: 700; text-decoration: none; color: #000;">Date of cancellation: </a> {cancelDate}</a><br/>
+
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>
-                                        <table
-                                          class="invoice-items"
-                                          cellpadding="0"
-                                          cellspacing="0"
-                                        >
-                                          <tbody>
-                                              {service}
-                                            <tr class="total">
-                                              <td
-                                                class="alignleft"
-                                                width="80%"
-                                              >
-                                                Total
-                                              </td>
-                                              <td class="alignright">
-                                                RS.{total}
-                                              </td>
-                                            </tr>
-                                            
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
+                                        <td style="text-align: center; font-style: italic;">
+                                          <p >You will get refund from bank in 2-3 working days</p>
+                                        </td>
+                                      </tr>
+                                    <tr>
                                   </tbody>
                                 </table>
                               </td>
                             </tr>
-                            <tr>
-                              <td class="content-block" style="font-family: Bree Serif;">
-                                 <a href="https://travelpublicissapient.com/"
+                            
+                              <td class="content-block" style="font-family: Bree Serif; margin-top: 0%;">
+                                <a href="https://travelpublicissapient.com/"
                                   >Visit PS Travel Aggregrator</a
                                 >
                               </td>

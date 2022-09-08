@@ -29,7 +29,6 @@ const emailNotificationService = {
         catch (e)
         {
             console.log(e);
-            throw e;
         }
     },
 };

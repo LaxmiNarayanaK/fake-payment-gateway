@@ -2,8 +2,11 @@ const nodemailer = require("nodemailer");
 const { mailSenderIdentity, mailSenderPassword } = require("../../../config");
 
 const mailService = {
+   
     send : async (senderAddress, subject, message) =>
     {
+        try
+        {
         // create reusable transporter object using the default SMTP transport
         const transporter = nodemailer.createTransport({
             host   : "smtp.gmail.com",
@@ -24,7 +27,14 @@ const mailService = {
         });
 
         console.log("Message sent: %s", info.messageId);
-    },
+     }
+     catch (e)
+    {
+        console.log(e);
+    } 
+},
+
+   
 };
 
 module.exports = mailService;
